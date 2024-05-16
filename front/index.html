@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/edd95abbb3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <header class="header">  
+        <div class="logo">
+          <img src="./pages/isaac-logo.png" class="cartelera" alt="cartelera">
+        </div>            
+        <nav  class="nav-menu">
+          <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="">Peliculas y Series</a></li>
+            <li><a href="./agregar_pellicula/agregarPelicula.html">Agregar Película</a></li>
+            <li><a href="./conctactanos/index.html">Contactanos</a></li>
+            <li><a href="./about/aboutMe.html">Sobre mi</a></li>
+            <li class="bucarPeliculas">
+              <input type="text" placeholder="Buscar Peliculas ...">
+            </li>
+          </ul>
+        </nav>  
+    </header>
+
+  <main>  
+    <hr class="hr">
+      <div class="contenedor-principal">
+        <div class="contenedor-carrusel carousel" >
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./pages/backdrop.jpg" class="d-block w-100" alt="pelicula1">
+              </div>
+              <div class="carousel-item">
+                <img src="./pages/1.png" class="d-block w-100" alt="pelicula2">
+              </div>
+              <div class="carousel-item">
+                <img src="./pages/2.png" class="d-block w-100" alt="pelicula3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button>
+          </div>
+        </div>
+        <section class="section0">
+          <div class="hero-container">
+            <div class="hero-text">
+              <h1>Interestellar</h1>
+            </div>
+            <div class="description">
+              <h2>Reviews</h2>
+              <h2>2022 | 2 horas y 55 minutos | Fantasia, Acción</h2>    
+            </div>
+            <div class="button">
+              <div class="ver-mas">
+                <button type="button" class="btn btn-primary"><i class="fa-solid fa-play"></i> Ver Ahora</button>
+              </div>
+              <div class="mas-info">
+                <button type="button" class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> Mas info</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      <section class="section1"> </section><!-- movies container  -->  
+      <section class="section2" id="section2">
+        <div >
+          <h4 class="titulo"></h4>
+          <a href=""><img src="" class="guardians" alt=""></a>      
+        </div>
+      </section>
+          
+    </main>
+      <footer class="footer"><p>&copy;2024 - Mi presentación</p></footer>
+      <script src="./public/bundle.js"></script>
+     
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>
+

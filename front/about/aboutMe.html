@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <<header class="header">  
+        <div class="logo">
+          <img src="../pages/isaac-logo.png" class="cartelera" alt="cartelera">
+        </div>            
+        <nav  class="nav-menu">
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="">Peliculas</a></li>
+            <li><a href="">Series</a></li>
+            <li><a href="../conctactanos/index.html">Contáctanos</a></li>
+            <li><a href="../about/aboutMe.html">Sobre mi</a></li>
+          </ul>
+        </nav>  
+    </header>
+        
+    <main>
+        <section class="SobreMi">
+            <div class="container1">
+                <h3 class="title">Sobre mi</h3>
+                <span>
+                    Mi nombre es Isaac, originario de Piura, Perú, aunque actualmente resido en Lima desde hace casi cuatro años. Soy un apasionado de los deportes y disfruto explorando la diversidad culinaria. Recientemente, he incursionado en el mundo de la programación y estoy absorbiendo conocimientos constantemente. Agradezco a Henry por brindarme la oportunidad de avanzar en mis estudios, donde estoy aprendiendo lenguajes fundamentales como HTML, CSS y JavaScript. Estoy convencido de que esta es la mejor opción para mi desarrollo profesional y personal.
+                </span>
+            </div>
+            <div class="isaac">
+                <img src="../img/isaac.jpeg" class="isaac-imagen" alt="isaac imagen">
+            </div>
+                
+        </section>
+        <section>
+            <div class="container2">
+                <div class="techFav">
+                    <h3>Mis tecnologías favoritas</h3>
+                </div>
+                <div class="cards">
+                    <h4>HTML</h4>
+                    <img src="../img/html.png" class="logo" alt="HTML Logo" />
+                </div>
+                <div class="cards">
+                    <h4>CSS</h4>
+                    <img src="../img/css.png" class="logo" alt="CSS Logo" />
+                </div>
+                <div class="cards">
+                    <h4>JAVASCRIPT</h4>
+                    <img src="../img/Javascript.png" class="logo" alt="JavaScript Logo" />
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <div class="title5">
+                    <h5>Mis actividades favoritas</h5>
+                </div>
+                <form class="formulario">
+                    <div>
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre de la actividad">
+                    </div>
+                    <div>
+                        <textarea id="descripcion" name="descripcion" placeholder="Descripción de la actividad"></textarea>
+                    </div>
+                    <div>
+                        <input id="link" type="url" name="imagen" placeholder="Link de imagen">
+                    </div>
+                    <div class="button-container">
+                        <button id="button">Agregar actividad</button>
+                        <button id="clearButton">Borrar Actividades</button>
+                    </div>
+                    
+                </form>
+                <div class="containerCard" id="divContainerCards">Sin actividades por el momento</div>
+            </div>
+        </section>
+    </main>   
+    <footer><p>&copy;2024 - Mi presentación</p></footer>
+    <footer><p></p></footer>
+    <!-- <script src="./about/index.js"></script>
+    <script src="./scripts/tempData.js"></script>
+    <script src="./scripts/index.js"></script> -->
+    <script src="../public/bundle.js"></script>
+
+</body>
+</html>
