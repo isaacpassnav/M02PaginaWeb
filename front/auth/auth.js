@@ -1,6 +1,12 @@
 const SESSION_KEY = "movieAppSession";
 const USERS_KEY = "movieAppUsers";
-const AUTH_API_BASE = "http://localhost:3000/auth";
+
+function getApiBaseUrl() {
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  return isLocal ? "http://localhost:3000" : `${window.location.origin}/api`;
+}
+
+const AUTH_API_BASE = `${getApiBaseUrl()}/auth`;
 
 function setMessage(el, text, type) {
   el.textContent = text;

@@ -8,7 +8,8 @@ const {
 async function tmdbHomeController(req, res) {
   try {
     const page = Number(req.query.page || 1);
-    const movies = await getHomeMovies(page);
+    const pages = Number(req.query.pages || 5);
+    const movies = await getHomeMovies(page, pages);
     res.status(200).json(movies);
   } catch (error) {
     res.status(500).json({ error: error.message || "TMDB home request failed" });

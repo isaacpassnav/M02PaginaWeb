@@ -1,0 +1,17 @@
+{
+  "name": "movie-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "University movie app with static frontend and Express API for Vercel",
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm --prefix front install && npm --prefix front run build:once"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0"
+  }
+}

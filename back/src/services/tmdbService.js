@@ -81,17 +81,23 @@ function pickTrailer(videos = []) {
   return preferred ? `https://www.youtube.com/watch?v=${preferred.key}` : null;
 }
 
-async function getHomeMovies(page = 1) {
-  const [genreMap, popular] = await Promise.all([
-    getGenreMap(),
+async function getHomeMovies(page = 1, pages = 1) {
+  const safePages = Math.max(1, Math.min(10, Number(pages) || 1));
+  const safePage = Math.max(1, Number(page) || 1);
+
+  const genreMap = await getGenreMap();
+  const requests = Array.from({ length: safePages }, (_, index) =>
     tmdbRequest("/movie/popular", {
       language: "en-US",
-      page,
+      page: safePage + index,
       include_adult: false,
-    }),
-  ]);
+    })
+  );
 
-  return (popular.results || []).map((movie) => normalizeMovie(movie, genreMap));
+  const responses = await Promise.all(requests);
+  const movies = responses.flatMap((response) => response.results || []);
+
+  return movies.map((movie) => normalizeMovie(movie, genreMap));
 }
 
 async function getMovieDetails(movieId) {

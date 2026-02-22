@@ -2,14 +2,12 @@ const { transformData } = require("./transformData.js");
 const { tempData } = require("./tempData.js");
 const axios = require("axios");
 
-const cardsContainer = document.querySelector(".section2");
-const tmdbBackApi = "http://localhost:3000/tmdb/home";
-
-function renderCards(data) {
-  cardsContainer.innerHTML = "";
-  const htmlCardsArray = data.map(cardsLoad);
-  htmlCardsArray.forEach((movie) => cardsContainer.appendChild(movie));
+function getApiBaseUrl() {
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  return isLocal ? "http://localhost:3000" : `${window.location.origin}/api`;
 }
+
+const tmdbBackApi = `${getApiBaseUrl()}/tmdb/home`;
 
 async function getData(url) {
   try {

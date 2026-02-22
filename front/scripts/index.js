@@ -1,6 +1,11 @@
 const getData = require("./getData.js");
 
-const endPoint = "http://localhost:3000/tmdb/home";
+function getApiBaseUrl() {
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  return isLocal ? "http://localhost:3000" : `${window.location.origin}/api`;
+}
+
+const endPoint = `${getApiBaseUrl()}/tmdb/home?pages=6`;
 const SESSION_KEY = "movieAppSession";
 
 const yearLabel = document.getElementById("year");

@@ -1,5 +1,11 @@
 const axios = require("axios");
-const url = "http://localhost:3000/movies";
+
+function getApiBaseUrl() {
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  return isLocal ? "http://localhost:3000" : `${window.location.origin}/api`;
+}
+
+const url = `${getApiBaseUrl()}/movies`;
 
 function addMovie(event) {
   event.preventDefault();
