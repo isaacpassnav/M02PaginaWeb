@@ -1,72 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Pasapera</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Movie | Movie App</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
 
-<body>
-    <header class="header">  
-        <div class="logo">
-          <img src="../pages/isaac-logo.png" class="cartelera" alt="cartelera">
-        </div>            
-        <nav  class="nav-menu">
-          <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="">Peliculas y Series</a></li>
-            <li><a href="./agregar_pellicula/agregarPelicula.html">Agregar Película</a></li>
-            <li><a href="../conctactanos/index.html">Contactanos</a></li>
-            <li><a href="../about/aboutMe.html">Sobre mi</a></li>
-            </li>
-          </ul>
-        </nav>  
+  <body>
+    <header class="header">
+      <div class="nav-left">
+        <a class="user-avatar-link" href="../auth/signin.html" aria-label="User access">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+        </a>
+        <a class="logo" href="../index.html" aria-label="Movie App home">
+          <img src="../pages/logoPM02_Movie App.png" class="cartelera" alt="Movie App logo" />
+        </a>
+      </div>
+
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="#">Movies & Series</a>
+        <a href="../agregar_pellicula/agregarPelicula.html">Add Movie</a>
+        <a href="../conctactanos/index.html">Contact</a>
+        <a href="https://fws-isaac.vercel.app/">About</a>
+      </nav>
+
+      <div class="nav-right"></div>
     </header>
-    <main>
-        <section class="section1">
-        <div>
-            <h3>Title</h3>
-            <input type="text" class="input" id="title" placeholder="Guardianes de la galaxia">
-        </div>
-        <div>
-            <h3>Year</h3>
-            <input type="number" class="input" id="year" placeholder="2024">
-        </div>
-        <div>
-            <h3><h3>Director</h3>
-            <input type="text" class="input" id="director" placeholder="James Gunn"></h3>
-        </div>
-        <div>
-            <h3>Duration</h3>
-            <input type="text" class="input" id="duration" placeholder="3h y 30min">
-        </div>
-        <div>
-            <h3>Genre</h3>
-            <input type="text" class="input" id="genre" placeholder="Accion, Drama, Terror ...">
-        </div>
-        <div>
-            <h3>Rate</h3>
-            <input type="number" class="input" id="rate" placeholder="7.7">
-        </div>
-        <div>
-            <h3>Poster</h3>
-            <input type="text" class="input" id="poster" placeholder="Ingresa link del poster">
-        </div>
-        </section>   
-        <div class="botones">
-            <button class="enviar" type="button" >Enviar</button>
-            <button class="limpiar" type="button" >Limpiar</button>
-        </div>          
-    </main>
-</body>
-<footer>
-</footer>
 
-<script src="./indexCrearMovies.js"></script>
-<!-- <script src="../public/bundle.js"></script> -->
+    <main>
+      <section class="section1">
+        <div>
+          <h3>Title</h3>
+          <input type="text" class="input" id="title" placeholder="Guardians of the Galaxy" />
+        </div>
+        <div>
+          <h3>Year</h3>
+          <input type="number" class="input" id="year" placeholder="2024" />
+        </div>
+        <div>
+          <h3>Director</h3>
+          <input type="text" class="input" id="director" placeholder="James Gunn" />
+        </div>
+        <div>
+          <h3>Duration</h3>
+          <input type="text" class="input" id="duration" placeholder="2h 30min" />
+        </div>
+        <div>
+          <h3>Genre</h3>
+          <input type="text" class="input" id="genre" placeholder="Action, Drama, Fantasy" />
+        </div>
+        <div>
+          <h3>Rate</h3>
+          <input type="number" class="input" id="rate" placeholder="7.7" />
+        </div>
+        <div>
+          <h3>Poster</h3>
+          <input type="text" class="input" id="poster" placeholder="Poster image URL" />
+        </div>
+        <div>
+          <h3>Watch URL (optional)</h3>
+          <input type="text" class="input" id="watchUrl" placeholder="YouTube trailer URL" />
+        </div>
+        <div>
+          <h3>Info URL (optional)</h3>
+          <input type="text" class="input" id="infoUrl" placeholder="IMDb or movie details URL" />
+        </div>
+      </section>
+      <div class="botones">
+        <button class="enviar" type="button">Send</button>
+        <button class="limpiar" type="button">Clear</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <h4>Movie App</h4>
+          <p>Web platform to discover movies, explore catalogs, and highlight trending content.</p>
+        </div>
+        <div class="footer-block">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="#">Movies & Series</a>
+          <a href="../conctactanos/index.html">Contact</a>
+          <a href="https://fws-isaac.vercel.app/">About</a>
+        </div>
+        <div class="footer-block">
+          <h4>Contact</h4>
+          <p>Isaac Lehi Pasapera Navarro</p>
+          <p>Fullstack Developer</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Movie App - All rights reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearLabel = document.getElementById("year");
+      if (yearLabel) yearLabel.textContent = String(new Date().getFullYear());
+    </script>
+    <script src="./indexCrearMovies.js"></script>
+  </body>
 </html>

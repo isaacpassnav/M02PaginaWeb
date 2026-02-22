@@ -1,92 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./style.css">
-    
-</head>
-<body>
-    <<header class="header">  
-        <div class="logo">
-          <img src="../pages/isaac-logo.png" class="cartelera" alt="cartelera">
-        </div>            
-        <nav  class="nav-menu">
-          <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="">Peliculas</a></li>
-            <li><a href="">Series</a></li>
-            <li><a href="../conctactanos/index.html">Contáctanos</a></li>
-            <li><a href="../about/aboutMe.html">Sobre mi</a></li>
-          </ul>
-        </nav>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Movie App</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .about-redirect-wrap {
+        min-height: 60vh;
+        display: grid;
+        place-items: center;
+        padding: 24px 12px;
+      }
+      .about-redirect-card {
+        width: min(680px, 94%);
+        border: 1px solid rgba(200, 212, 232, 0.22);
+        border-radius: 14px;
+        background: linear-gradient(180deg, rgba(17, 28, 49, 0.95), rgba(12, 18, 31, 0.95));
+        padding: 24px;
+        text-align: center;
+      }
+      .about-redirect-card h1 {
+        margin: 0 0 10px;
+      }
+      .about-redirect-card p {
+        margin: 0 0 18px;
+        color: #c8d4e8;
+      }
+      .about-redirect-link {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 8px;
+        background: #e50914;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav-left">
+        <a id="userAccessLink" class="user-avatar-link" href="../auth/signin.html" aria-label="User access">
+          <i id="userStatusIcon" class="bi bi-person-circle" aria-hidden="true"></i>
+        </a>
+        <a class="logo" href="../index.html" aria-label="Movie App home">
+          <img src="../pages/logoPM02_Movie App.png" class="cartelera" alt="Movie App logo" />
+        </a>
+      </div>
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="#">Movies & Series</a>
+        <a href="../agregar_pellicula/agregarPelicula.html">Add Movie</a>
+        <a href="../conctactanos/index.html">Contact</a>
+        <a href="https://fws-isaac.vercel.app/">About</a>
+      </nav>
+      <div class="nav-right">
+        <div class="buscarPeliculas">
+          <input type="text" placeholder="Search movies..." />
+        </div>
+      </div>
     </header>
-        
-    <main>
-        <section class="SobreMi">
-            <div class="container1">
-                <h3 class="title">Sobre mi</h3>
-                <span>
-                    Mi nombre es Isaac, originario de Piura, Perú, aunque actualmente resido en Lima desde hace casi cuatro años. Soy un apasionado de los deportes y disfruto explorando la diversidad culinaria. Recientemente, he incursionado en el mundo de la programación y estoy absorbiendo conocimientos constantemente. Agradezco a Henry por brindarme la oportunidad de avanzar en mis estudios, donde estoy aprendiendo lenguajes fundamentales como HTML, CSS y JavaScript. Estoy convencido de que esta es la mejor opción para mi desarrollo profesional y personal.
-                </span>
-            </div>
-            <div class="isaac">
-                <img src="../img/isaac.jpeg" class="isaac-imagen" alt="isaac imagen">
-            </div>
-                
-        </section>
-        <section>
-            <div class="container2">
-                <div class="techFav">
-                    <h3>Mis tecnologías favoritas</h3>
-                </div>
-                <div class="cards">
-                    <h4>HTML</h4>
-                    <img src="../img/html.png" class="logo" alt="HTML Logo" />
-                </div>
-                <div class="cards">
-                    <h4>CSS</h4>
-                    <img src="../img/css.png" class="logo" alt="CSS Logo" />
-                </div>
-                <div class="cards">
-                    <h4>JAVASCRIPT</h4>
-                    <img src="../img/Javascript.png" class="logo" alt="JavaScript Logo" />
-                </div>
-            </div>
-        </section>
-        <section>
-            <div>
-                <div class="title5">
-                    <h5>Mis actividades favoritas</h5>
-                </div>
-                <form class="formulario">
-                    <div>
-                        <input id="nombre" type="text" name="nombre" placeholder="Nombre de la actividad">
-                    </div>
-                    <div>
-                        <textarea id="descripcion" name="descripcion" placeholder="Descripción de la actividad"></textarea>
-                    </div>
-                    <div>
-                        <input id="link" type="url" name="imagen" placeholder="Link de imagen">
-                    </div>
-                    <div class="button-container">
-                        <button id="button">Agregar actividad</button>
-                        <button id="clearButton">Borrar Actividades</button>
-                    </div>
-                    
-                </form>
-                <div class="containerCard" id="divContainerCards">Sin actividades por el momento</div>
-            </div>
-        </section>
-    </main>   
-    <footer><p>&copy;2024 - Mi presentación</p></footer>
-    <footer><p></p></footer>
-    <!-- <script src="./about/index.js"></script>
-    <script src="./scripts/tempData.js"></script>
-    <script src="./scripts/index.js"></script> -->
-    <script src="../public/bundle.js"></script>
 
-</body>
+    <main class="about-redirect-wrap">
+      <section class="about-redirect-card">
+        <h1>About Me</h1>
+        <p>The complete portfolio is hosted on my dedicated website.</p>
+        <a class="about-redirect-link" href="https://fws-isaac.vercel.app/">Open portfolio</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <h4>Movie App</h4>
+          <p>Web platform to discover movies, explore catalogs, and highlight trending content.</p>
+        </div>
+        <div class="footer-block">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="#">Movies & Series</a>
+          <a href="../agregar_pellicula/agregarPelicula.html">Add Movie</a>
+          <a href="../conctactanos/index.html">Contact</a>
+        </div>
+        <div class="footer-block">
+          <h4>Contact</h4>
+          <p>Isaac Lehi Pasapera Navarro</p>
+          <p>Fullstack Developer</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Movie App - All rights reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearLabel = document.getElementById("year");
+      if (yearLabel) yearLabel.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
 </html>

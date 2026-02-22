@@ -1,54 +1,43 @@
-// const{ cardsLoad } = require("./jsToHtml.js")
-
-// function transformData(data){
-//     // console.log(data)
-//     data.forEach((pelicula,index) =>{
-//         pelicula.id = index + 1;
-//         switch(pelicula.id){
-//             case 1:
-//                 pelicula.background = "https://wallpaperaccess.com/full/96391.jpg"
-//                 break;
-//             case 2: 
-//                 pelicula.background = "https://th.bing.com/th/id/R.2d463f54bf6c4896262523ccf5cc37aa?rik=EVT0W%2bqJ%2fjzaJg&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fstar-wars-poster-4k-af.jpg&ehk=XUwzZ2HStyJCqpLQKYqNtM1TqtI3A0CjNb0VhwOxx0I%3d&risl=1&pid=ImgRaw&r=0"
-//                 break;
-//             case 3:
-//                 pelicula.background = "https://c8.alamy.com/comp/HCH6BE/the-lord-of-the-rings-fellowship-of-the-ring-2001-HCH6BE.jpg"
-//             default:
-//                 break;
-//         }
-//     });
-//     const cardsContainer = document.querySelector('.section2');
-//     const arrayHtmlCards = data.map(cardsLoad);
-//     arrayHtmlCards.forEach((pelicula) => cardsContainer.appendChild(pelicula));
-// };
-// module.exports = { 
-//     transformData,
-// }
 const { cardsLoad } = require("./jsToHtml.js");
+const { startHeroCarousel } = require("./heroCarousel.js");
+
+function buildMovieUrls(movie) {
+  const safeTitle = encodeURIComponent(`${movie.title || "movie"} trailer`);
+  const safeQuery = encodeURIComponent(`${movie.title || "movie"} film info`);
+
+  movie.watchUrl =
+    movie.watchUrl ||
+    movie.trailerUrl ||
+    `https://www.youtube.com/results?search_query=${safeTitle}`;
+
+  movie.infoUrl =
+    movie.infoUrl ||
+    movie.imdbUrl ||
+    movie.homepage ||
+    `https://www.google.com/search?q=${safeQuery}`;
+}
 
 function transformData(data) {
-    data.forEach((pelicula, index) => {
-        pelicula.id = index + 1;
-        switch(pelicula.id) {
-            case 1:
-                pelicula.background = "https://wallpaperaccess.com/full/96391.jpg";
-                break;
-            case 2:
-                pelicula.background = "https://th.bing.com/th/id/R.2d463f54bf6c4896262523ccf5cc37aa?rik=EVT0W%2bqJ%2fjzaJg&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fstar-wars-poster-4k-af.jpg&ehk=XUwzZ2HStyJCqpLQKYqNtM1TqtI3A0CjNb0VhwOxx0I%3d&risl=1&pid=ImgRaw&r=0";
-                break;
-            case 3:
-                pelicula.background = "https://c8.alamy.com/comp/HCH6BE/the-lord-of-the-rings-fellowship-of-the-ring-2001-HCH6BE.jpg";
-                break;
-            default:
-                break;
-        }
-    });
+  const cardsContainer = document.querySelector(".section2");
+  cardsContainer.innerHTML = "";
 
-    const cardsContainer = document.querySelector('.section2');
-    const arrayHtmlCards = data.map(cardsLoad);
-    arrayHtmlCards.forEach((pelicula) => cardsContainer.appendChild(pelicula));
-};
+  const defaultBackground = "./pages/backdrop.jpg";
 
-module.exports = { 
-    transformData
+  data.forEach((movie, index) => {
+    movie.id = movie.id || index + 1;
+    movie.description = movie.description || "No description available.";
+    movie.year = movie.year || "N/A";
+    movie.duration = movie.duration || "N/A";
+    movie.background = movie.background || movie.poster || defaultBackground;
+    buildMovieUrls(movie);
+  });
+
+  startHeroCarousel(data.slice(0, 10));
+
+  const htmlCardsArray = data.map(cardsLoad);
+  htmlCardsArray.forEach((movie) => cardsContainer.appendChild(movie));
+}
+
+module.exports = {
+  transformData,
 };

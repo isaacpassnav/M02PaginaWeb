@@ -1,22 +1,33 @@
 {
   "name": "front",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend de app de peliculas",
   "main": "index.js",
   "scripts": {
-    "start": "live-server",
-    "build": "webpack --watch"
+    "start": "live-server --watch=./index.html,./styles,./public,./scripts,./auth --ignore=node_modules",
+    "build": "webpack --mode development --watch",
+    "build:once": "webpack --mode development",
+    "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "movies",
+    "frontend",
+    "bootstrap"
+  ],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "sweetalert2": "^11.17.2"
+  },
   "devDependencies": {
+    "eslint": "^9.28.0",
     "jest": "^29.7.0",
     "live-server": "^1.2.2",
+    "prettier": "^3.3.3",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "axios": "^1.6.8"
   }
 }

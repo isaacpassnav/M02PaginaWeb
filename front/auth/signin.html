@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In | Movie App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./auth.css" />
+  </head>
+  <body>
+    <main class="auth-wrapper">
+      <div class="auth-brand">
+        <img src="../pages/logoPM02_Movie App.png" alt="Movie App logo" />
+      </div>
+      <p class="auth-subtitle">Sign in to continue your movie journey.</p>
+
+      <form id="signinForm" class="auth-form">
+        <label for="signinEmail">Email</label>
+        <input id="signinEmail" name="email" type="email" autocomplete="email" required />
+
+        <label for="signinPassword">Password</label>
+        <input id="signinPassword" name="password" type="password" autocomplete="current-password" required />
+
+        <button class="auth-submit" type="submit">Sign in</button>
+      </form>
+
+      <p id="signinMessage" class="auth-message"></p>
+      <p class="auth-footer">
+        Don't have an account? <a href="./signup.html">Create one</a><br />
+        <a href="../index.html">Back to home</a>
+      </p>
+    </main>
+
+    <script src="./auth.js"></script>
+  </body>
+</html>

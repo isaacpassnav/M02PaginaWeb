@@ -1,94 +1,63 @@
-body{
-    background: rgb(0,0,0);
-    background-size: cover;
-    background-position: center; /* Asegura que la imagen esté centrada */
-    background-attachment: fixed; /* Opcional: mantiene la imagen de fondo fija */
-    min-height: 100vh;
-    max-width: 100vw;
-    color: white;   
-    font-family: "Montserrat";
-}
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 80px;
-}
-.logo {
-    width: 250px;
-    height: 100px;
-    position: relative;
-    top: 20px;
-    left: -60px;
-}
-.logo img {
-    width: 85px;
-    height: auto;
-    border-radius: 2px;
-}
-.nav-menu ul{
-    display: flex; 
-    list-style-type: none;  
-    align-items: center;  
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-}
-.nav-menu li{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 18px;
-    margin: 0 40px;
-}
-.nav-menu li:hover{
-    border-bottom: 2px solid white;
-}
-.nav-menu a {
+body {
+    margin: 0;
     color: white;
-    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
 }
-.section1{
-    margin: 100px ;
-    margin-left: 400px;
+
+.section1 {
+    margin: 60px auto 0;
+    width: min(780px, 92%);
 }
-.input{
-    width: 80%; 
-    padding: 10px; 
-    margin: 10px auto; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
 }
-h3{
-    padding-left: 30px;
-    margin: 10px;
+
+h3 {
+    margin: 10px 0;
     padding-top: 5px;
 }
-.botones{
-    padding: 30px;  
-    margin-top: -8%; 
-}
-.enviar {
-    margin-left: 440px;
-    justify-content: space-between;
-    padding: 15px 50px;
-    border: none;
-    background-color: #007bff;
-    cursor: pointer;
-    border-radius: 10px;
-}
-.limpiar{
-    padding: 15px 50px;
-    margin-left: 200px;
-    border: none;
-    background-color: #007bff;
-    cursor: pointer;
-    border-radius: 10px;
-}
-.movie-card{
+
+.botones {
+    padding: 24px 16px;
+    margin-top: 0;
     display: flex;
     justify-content: center;
-    margin: 3em 0em 5em 0em;
-    flex-wrap: wrap;
-    margin-left: 30px;
+    gap: 14px;
+}
+
+.enviar,
+.limpiar {
+    padding: 15px 40px;
+    border: none;
+    background-color: #007bff;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-right {
+    min-width: 1px;
+}
+
+@media (max-width: 640px) {
+    .section1 {
+        margin-top: 24px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .enviar,
+    .limpiar {
+        width: min(280px, 100%);
+    }
 }
