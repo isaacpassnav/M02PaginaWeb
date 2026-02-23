@@ -41,49 +41,67 @@
       <div class="nav-right"></div>
     </header>
 
-    <main>
-      <section class="section1">
-        <div>
-          <h3>Title</h3>
-          <input type="text" class="input" id="title" placeholder="Guardians of the Galaxy" />
+    <main class="add-movie-main">
+      <section class="section1 add-movie-card">
+        <div class="form-header">
+          <h1>Add New Movie</h1>
+          <p>Create a movie entry with validated fields and secure URLs.</p>
         </div>
-        <div>
-          <h3>Year</h3>
-          <input type="number" class="input" id="year" placeholder="2024" />
+
+        <div class="movie-form-grid">
+          <div class="field">
+            <label class="field-label" for="title">Title</label>
+            <input type="text" class="input" id="title" placeholder="Guardians of the Galaxy" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="movieYear">Year</label>
+            <input type="number" class="input" id="movieYear" placeholder="2024" min="1888" max="2100" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="director">Director</label>
+            <input type="text" class="input" id="director" placeholder="James Gunn" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="duration">Duration</label>
+            <input type="text" class="input" id="duration" placeholder="2h 30min" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="genre">Genre</label>
+            <input type="text" class="input" id="genre" placeholder="Action, Drama, Fantasy" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="rate">Rate</label>
+            <input type="number" class="input" id="rate" placeholder="7.7" min="0" max="10" step="0.1" />
+          </div>
+
+          <div class="field field-wide">
+            <label class="field-label" for="poster">Poster URL</label>
+            <input type="text" class="input" id="poster" placeholder="https://image-host.com/poster.jpg" />
+          </div>
+
+          <div class="field field-wide">
+            <label class="field-label" for="watchUrl">Watch URL (optional)</label>
+            <input type="text" class="input" id="watchUrl" placeholder="YouTube trailer URL" />
+          </div>
+
+          <div class="field field-wide">
+            <label class="field-label" for="infoUrl">Info URL (optional)</label>
+            <input type="text" class="input" id="infoUrl" placeholder="IMDb or movie details URL" />
+          </div>
         </div>
-        <div>
-          <h3>Director</h3>
-          <input type="text" class="input" id="director" placeholder="James Gunn" />
-        </div>
-        <div>
-          <h3>Duration</h3>
-          <input type="text" class="input" id="duration" placeholder="2h 30min" />
-        </div>
-        <div>
-          <h3>Genre</h3>
-          <input type="text" class="input" id="genre" placeholder="Action, Drama, Fantasy" />
-        </div>
-        <div>
-          <h3>Rate</h3>
-          <input type="number" class="input" id="rate" placeholder="7.7" />
-        </div>
-        <div>
-          <h3>Poster</h3>
-          <input type="text" class="input" id="poster" placeholder="Poster image URL" />
-        </div>
-        <div>
-          <h3>Watch URL (optional)</h3>
-          <input type="text" class="input" id="watchUrl" placeholder="YouTube trailer URL" />
-        </div>
-        <div>
-          <h3>Info URL (optional)</h3>
-          <input type="text" class="input" id="infoUrl" placeholder="IMDb or movie details URL" />
+
+        <input type="text" id="website" class="hp-field" autocomplete="off" tabindex="-1" aria-hidden="true" />
+
+        <div class="botones">
+          <button class="enviar" type="button">Send</button>
+          <button class="limpiar" type="button">Clear</button>
         </div>
       </section>
-      <div class="botones">
-        <button class="enviar" type="button">Send</button>
-        <button class="limpiar" type="button">Clear</button>
-      </div>
     </main>
 
     <footer class="footer">
@@ -106,13 +124,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Movie App - All rights reserved</p>
+        <p>&copy; <span id="footerYear"></span> Movie App - All rights reserved</p>
       </div>
     </footer>
 
     <script>
-      const yearLabel = document.getElementById("year");
-      if (yearLabel) yearLabel.textContent = String(new Date().getFullYear());
+      const footerYearLabel = document.getElementById("footerYear");
+      if (footerYearLabel) footerYearLabel.textContent = String(new Date().getFullYear());
     </script>
     <script src="./indexCrearMovies.js"></script>
   </body>

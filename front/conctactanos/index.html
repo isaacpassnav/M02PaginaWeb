@@ -34,7 +34,7 @@
         <a href="#">Movies & Series</a>
         <a href="../agregar_pellicula/agregarPelicula.html">Add Movie</a>
         <a href="../conctactanos/index.html">Contact</a>
-        <a href="https://fws-isaac.vercel.app/">About</a>
+        <a href="https://fws-isaac.vercel.app/" target="_blank" rel="noreferrer">About</a>
       </nav>
 
       <div class="nav-right"></div>
@@ -42,31 +42,66 @@
 
     <main class="main">
       <div class="contenedor-principal">
-        <section class="section">
+        <aside class="section">
           <ul class="container1">
-            <li><a href="https://www.justwatch.com/">About Pelisplus</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="/front/conctactanos/index.html">Contact information</a></li>
-            <li><a href="#">Work with us</a></li>
-            <li><a href="#">Social channels</a></li>
+            <li><a href="#about">About Movie App</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#contact-info">Contact information</a></li>
+            <li><a href="#work">Work with me</a></li>
+            <li><a href="#social">Social channels</a></li>
           </ul>
-        </section>
-        <section>
-          <div class="container2">
-            <h2>Contact information</h2>
+        </aside>
+
+        <section class="container2">
+          <article id="about" class="topic-block">
+            <h2>About Movie App</h2>
             <p class="parrafo">
-              If you need help, please visit our help center first. There you can find answers about account setup,
-              content publishing, and common platform questions. If you still need help, you can reach out through our
-              support channels.
+              Movie App is a university fullstack project focused on streaming-style discovery UX: hero banners,
+              trending catalogs, paginated movie cards, and provider/trailer integrations.
             </p>
-            <h2>Address</h2>
-            <ul class="direccion">
-              <li>Google LLC, D/B/A YouTube</li>
-              <li>901 Cherry Ave.</li>
-              <li>San Bruno, CA 94066</li>
-              <li>Fax: +1 650-253-0001</li>
+          </article>
+
+          <article id="community" class="topic-block">
+            <h2>Community</h2>
+            <p class="parrafo">
+              I am open to collaborating with students, developers, and creators working on movie, media, and modern
+              web platform ideas.
+            </p>
+          </article>
+
+          <article id="contact-info" class="topic-block">
+            <h2>Contact information</h2>
+            <ul class="info-list">
+              <li><strong>Name:</strong> Isaac Lehi Pasapera Navarro</li>
+              <li><strong>Role:</strong> Fullstack Developer</li>
+              <li><strong>Location:</strong> Prague, Czech Republic</li>
+              <li><strong>Phone:</strong> +420 777 450 279</li>
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:pasapera279@gmail.com">pasapera279@gmail.com</a>
+              </li>
             </ul>
-          </div>
+          </article>
+
+          <article id="work" class="topic-block">
+            <h2>Work with me</h2>
+            <p class="parrafo">
+              Available for web development collaborations, API integrations, and fullstack feature delivery focused on
+              clean code, maintainable architecture, and practical product execution.
+            </p>
+          </article>
+
+          <article id="social" class="topic-block">
+            <h2>Social channels</h2>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/isaac-pasapera-navarro/" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+              <a href="https://github.com/isaacpassnav" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://x.com/IsaacPasapera" target="_blank" rel="noreferrer">X</a>
+              <a href="https://www.instagram.com/isaac_pasapera/" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </article>
         </section>
       </div>
     </main>
@@ -82,7 +117,7 @@
           <a href="../index.html">Home</a>
           <a href="#">Movies & Series</a>
           <a href="../agregar_pellicula/agregarPelicula.html">Add Movie</a>
-          <a href="https://fws-isaac.vercel.app/">About</a>
+          <a href="https://fws-isaac.vercel.app/" target="_blank" rel="noreferrer">About</a>
         </div>
         <div class="footer-block">
           <h4>Contact</h4>
@@ -91,13 +126,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Movie App - All rights reserved</p>
+        <p>&copy; <span id="footerYear"></span> Movie App - All rights reserved</p>
       </div>
     </footer>
 
     <script>
-      const yearLabel = document.getElementById("year");
-      if (yearLabel) yearLabel.textContent = String(new Date().getFullYear());
+      const footerYearLabel = document.getElementById("footerYear");
+      if (footerYearLabel) footerYearLabel.textContent = String(new Date().getFullYear());
     </script>
   </body>
 </html>

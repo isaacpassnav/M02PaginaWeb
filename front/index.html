@@ -37,7 +37,7 @@
 
       <nav class="nav-menu" aria-label="Primary navigation">
         <a href="./index.html">Home</a>
-        <a href="#">Movies & Series</a>
+        <a href="#moviesSeriesSection">Movies & Series</a>
         <a href="./agregar_pellicula/agregarPelicula.html">Add Movie</a>
         <a href="./conctactanos/index.html">Contact</a>
         <a href="https://fws-isaac.vercel.app/">About</a>
@@ -45,7 +45,7 @@
 
       <div class="nav-right">
         <div class="buscarPeliculas">
-          <input type="text" placeholder="Search movies..." />
+          <input id="movieSearchInput" type="text" placeholder="Search movies..." autocomplete="off" />
         </div>
       </div>
     </header>
@@ -80,7 +80,13 @@
         </section>
       </div>
 
-      <section class="section1"></section>
+      <section class="section1" id="moviesSeriesSection">
+        <div class="section1-inner">
+          <h3>Movies & Series</h3>
+          <p>Use quick genre filters or search to find titles instantly.</p>
+          <div id="genreFilters" class="genre-filters"></div>
+        </div>
+      </section>
       <section class="section2" id="section2"></section>
     </main>
 
@@ -93,7 +99,7 @@
         <div class="footer-block">
           <h4>Navigation</h4>
           <a href="./index.html">Home</a>
-          <a href="#">Movies & Series</a>
+          <a href="#moviesSeriesSection">Movies & Series</a>
           <a href="./agregar_pellicula/agregarPelicula.html">Add Movie</a>
           <a href="./conctactanos/index.html">Contact</a>
         </div>

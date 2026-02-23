@@ -9,7 +9,9 @@ function getApiBaseUrl() {
 
 const tmdbBackApi = `${getApiBaseUrl()}/tmdb/home`;
 
-async function getData(url) {
+async function getData(url, options = {}) {
+  const { render = true } = options;
+
   try {
     const response = await axios.get(url || tmdbBackApi, { timeout: 8000 });
     const movies = Array.isArray(response.data) ? response.data : [];
@@ -18,10 +20,17 @@ async function getData(url) {
       throw new Error("Backend returned no content");
     }
 
-    transformData(movies);
+    if (render) {
+      transformData(movies);
+    }
+
+    return movies;
   } catch (error) {
     console.warn("TMDB backend unavailable, loading local backup", error.message);
-    transformData(tempData);
+    if (render) {
+      transformData(tempData);
+    }
+    return tempData;
   }
 }
 

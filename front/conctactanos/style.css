@@ -28,6 +28,11 @@ body {
 .container1 a {
     color: #d6e1f5;
     text-decoration: none;
+    font-weight: 600;
+}
+
+.container1 a:hover {
+    color: #ffffff;
 }
 
 .container2 {
@@ -38,6 +43,18 @@ body {
     padding: 12px;
     width: 100%;
     background: rgba(8, 14, 24, 0.72);
+}
+
+.topic-block {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(200, 212, 232, 0.14);
+    margin-bottom: 14px;
+}
+
+.topic-block:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .parrafo {
@@ -53,6 +70,43 @@ body {
     margin: 8px 0 0;
     padding: 0;
     color: #d3d6d6;
+}
+
+.info-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    color: #d3d6d6;
+    line-height: 1.8;
+}
+
+.info-list a {
+    color: #f3f7ff;
+    text-decoration: none;
+}
+
+.info-list a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links a {
+    border: 1px solid rgba(200, 212, 232, 0.32);
+    background: rgba(11, 20, 34, 0.9);
+    color: #f3f7ff;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0.38rem 0.8rem;
+}
+
+.social-links a:hover {
+    border-color: #f97316;
 }
 
 .nav-right {

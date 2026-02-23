@@ -32,10 +32,11 @@ function buildMovieUrls(movie) {
 function transformData(data) {
   const cardsContainer = document.querySelector(".section2");
   cardsContainer.innerHTML = "";
+  const movies = Array.isArray(data) ? data : [];
 
   const defaultBackground = "./pages/backdrop.jpg";
 
-  data.forEach((movie, index) => {
+  movies.forEach((movie, index) => {
     movie.id = movie.id || index + 1;
     movie.description = movie.description || "No description available.";
     movie.year = movie.year || "N/A";
@@ -44,7 +45,7 @@ function transformData(data) {
     buildMovieUrls(movie);
   });
 
-  startHeroCarousel(data.slice(0, 10));
+  startHeroCarousel(movies.slice(0, 10));
   const moviesGrid = document.createElement("div");
   const pagination = document.createElement("div");
 
@@ -54,7 +55,7 @@ function transformData(data) {
   cardsContainer.appendChild(moviesGrid);
   cardsContainer.appendChild(pagination);
 
-  const totalPages = Math.max(1, Math.ceil(data.length / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(movies.length / PAGE_SIZE));
   let currentPage = 1;
 
   const renderCurrentPage = (pageNumber) => {
@@ -63,7 +64,17 @@ function transformData(data) {
 
     const start = (currentPage - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
-    const pageMovies = data.slice(start, end);
+    const pageMovies = movies.slice(start, end);
+
+    if (!pageMovies.length) {
+      const emptyState = document.createElement("div");
+      emptyState.classList.add("empty-state");
+      emptyState.textContent = "No movies found. Try another search.";
+      moviesGrid.appendChild(emptyState);
+      pagination.innerHTML = "";
+      return;
+    }
+
     const htmlCardsArray = pageMovies.map(cardsLoad);
     htmlCardsArray.forEach((movieCard, index) => {
       movieCard.style.animationDelay = `${index * 45}ms`;
